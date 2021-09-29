@@ -2,8 +2,6 @@ package hr.sortingalgorithms;
 
 import hr.sortingalgorithms.SortingAlgorithm;
 
-import java.lang.Comparable;
-
 public class SelectionSort implements SortingAlgorithm
 {
 
