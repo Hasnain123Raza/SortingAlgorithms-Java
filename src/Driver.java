@@ -1,24 +1,65 @@
-import hr.sortingalgorithms.SelectionSort;
+import hr.sortingalgorithms.*;
+
+import java.util.Random;
 
 public class Driver
 {
+	private static Random random = new Random();
 
 	public static void main(String[] args)
 	{
-		Integer unsortedArray[] = {5, 3, 2, 6, 7, 1, 9};
-
-		System.out.println("Unsorted array: ");
-		for (int index = 0; index < unsortedArray.length; index++)
-			System.out.print(unsortedArray[index] + ", ");
-		System.out.println("");
-
 		SelectionSort selectionSort = new SelectionSort();
-		selectionSort.sort(unsortedArray);
+		testSortingAlgorithm(selectionSort);
+	}
 
-		System.out.println("Sorted array: ");
-		for (int index = 0; index < unsortedArray.length; index++)
-			System.out.print(unsortedArray[index] + ", ");
+	public static <T extends SortingAlgorithm> void testSortingAlgorithm(T sortingAlgorithm)
+	{
+		int sortingArrayLengths[] = {1, 2, 10};
+
+		for (int index = 0; index < sortingArrayLengths.length; index++)
+		{
+			Integer array[] = generateRandomArray(sortingArrayLengths[index]);
+			
+			System.out.println("Unsorted array: ");
+			printArray(array);
+
+			sortingAlgorithm.sort(array);
+
+			System.out.println("Sorted array: ");
+			printArray(array);
+
+			if (isSortedAscending(array))
+				System.out.println("[SUCCESS] SORTED");
+			else
+				System.out.println("[FAILED] NOT SORTED");
+		}
+	}
+
+	public static <T extends Comparable> boolean isSortedAscending(T array[])
+	{
+		if (array.length == 1)
+			return true;
+
+		for (int index = 0; index < array.length - 1; index++)
+			if (array[index].compareTo(array[index + 1]) > 0)
+				return false;
+		return true;
+	}
+
+	public static <T> void printArray(T array[])
+	{
+		for (int index = 0; index < array.length; index++)
+			System.out.print(array[index] + ", ");
 		System.out.println("");
 	}
 
+	public static Integer[] generateRandomArray(int length)
+	{
+		Integer array[] = new Integer[length];
+		
+		for (int counter = 0; counter < length; counter++)
+			array[counter] = (Integer)random.nextInt(100);
+
+		return array;
+	}
 }
