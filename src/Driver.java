@@ -4,12 +4,22 @@ import java.util.Random;
 
 public class Driver
 {
+	/* ADD MORE ALGORITHMS HERE */
+	private static SortingAlgorithm sortingAlgorithms[] = {
+		new SelectionSort()
+	};
+
 	private static Random random = new Random();
 
 	public static void main(String[] args)
 	{
-		SelectionSort selectionSort = new SelectionSort();
-		testSortingAlgorithm(selectionSort);
+		for (int index = 0; index < sortingAlgorithms.length; index++)
+		{
+			SortingAlgorithm sortingAlgorithm = sortingAlgorithms[index];
+			System.out.println("[TESTING] " + sortingAlgorithm.getClass().getName() + "\n");
+			testSortingAlgorithm(sortingAlgorithm);
+			System.out.println("");
+		}
 	}
 
 	public static <T extends SortingAlgorithm> void testSortingAlgorithm(T sortingAlgorithm)
@@ -18,8 +28,9 @@ public class Driver
 
 		for (int index = 0; index < sortingArrayLengths.length; index++)
 		{
+			System.out.println("[TEST]");
 			Integer array[] = generateRandomArray(sortingArrayLengths[index]);
-			
+
 			System.out.println("Unsorted array: ");
 			printArray(array);
 
@@ -32,6 +43,7 @@ public class Driver
 				System.out.println("[SUCCESS] SORTED");
 			else
 				System.out.println("[FAILED] NOT SORTED");
+			System.out.println("");
 		}
 	}
 
