@@ -6,7 +6,8 @@ public class Driver
 {
 	/* ADD MORE ALGORITHMS HERE */
 	private static SortingAlgorithm sortingAlgorithms[] = {
-		new SelectionSort()
+		new SelectionSort(),
+		new BubbleSort()
 	};
 
 	private static Random random = new Random();
