@@ -12,10 +12,10 @@ public class SelectionSort implements SortingAlgorithm
 	{
 		for (int i = 0; i < array.length - 1; i++)
 		{
-			T minimumValue = array[array.length - 1];
-			int minimumIndex = array.length - 1;
+			T minimumValue = array[i];
+			int minimumIndex = i;
 
-			for (int j = i; j < array.length; j++)
+			for (int j = i + 1; j < array.length; j++)
 			{
 				if (array[j].compareTo(minimumValue) < 0)
 				{
