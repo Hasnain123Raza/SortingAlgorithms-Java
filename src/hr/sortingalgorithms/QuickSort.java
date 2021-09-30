@@ -6,6 +6,8 @@ import java.lang.Comparable;
 
 public class QuickSort implements SortingAlgorithm
 {
+
+    @SuppressWarnings("unchecked")
     public <T extends Comparable> void sort(T[] array)
     {
         int low = 0;
