@@ -9,7 +9,8 @@ public class Driver
 		new SelectionSort(),
 		new BubbleSort(),
 		new InsertionSort(),
-		new MergeSort()
+		new MergeSort(),
+		new HeapSort()
 	};
 
 	private static Random random = new Random();
