@@ -27,7 +27,7 @@ public class Driver
 
 	public static <T extends SortingAlgorithm> void testSortingAlgorithm(T sortingAlgorithm)
 	{
-		int sortingArrayLengths[] = {2, 10};
+		int sortingArrayLengths[] = {2, 3, 9, 10};
 
 		for (int index = 0; index < sortingArrayLengths.length; index++)
 		{
