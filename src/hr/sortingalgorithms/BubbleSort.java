@@ -1,6 +1,6 @@
 package hr.sortingalgorithms;
 
-import hr.sortingalgorithms.SortingAlgorithm;
+import hr.sortingalgorithms.*;
 
 public class BubbleSort implements SortingAlgorithm
 {
