@@ -8,8 +8,8 @@ public class Driver
 	private static SortingAlgorithm sortingAlgorithms[] = {
 		new SelectionSort(),
 		new BubbleSort(),
-		new InsertionSort()
-    new QuickSort()
+		new InsertionSort(),
+    		new QuickSort(),
 		new MergeSort(),
 		new HeapSort()
 	};
