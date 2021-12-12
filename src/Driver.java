@@ -9,6 +9,7 @@ public class Driver
 		new SelectionSort(),
 		new BubbleSort(),
 		new InsertionSort(),
+    		new QuickSort(),
 		new MergeSort(),
 		new HeapSort()
 	};
